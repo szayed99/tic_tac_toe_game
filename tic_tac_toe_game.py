@@ -32,7 +32,7 @@ def make_move(piece, game): #piece = 1 for O, 2 for X
     while not done:
         valid_choices = draw_grid(game)
         choice = input("\nPick an empty square number: ")
-        if choice in list(valid_choices.keys()):
+        if choice in valid_choices.keys():
             game[valid_choices[choice][0], valid_choices[choice][1]] = piece
             print("\n")
             done = True
@@ -56,5 +56,6 @@ def play(game):
             draw_grid(game)
             print("\nX Won!")
             return
+
 game = np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]])       
 play(game)
